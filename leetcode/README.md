@@ -27,3 +27,9 @@
 |  Math    |
 | ------------  | 
 | Reverse Integer   |  
+
+# Hard #
+
+|  Array    |
+| ------------  | 
+| Find Median Sorted Arrays   |  
