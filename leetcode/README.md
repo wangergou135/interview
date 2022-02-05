@@ -19,6 +19,8 @@
 |  String    |
 | ------------  | 
 | Longest Palindromic Substring |
+| Zigzag Conversion|
+| String To Integer Atoi|
 
 |  List    |
 | ------------  | 
@@ -27,6 +29,7 @@
 |  Math    |
 | ------------  | 
 | Reverse Integer   |  
+| Palindrome Number   |  
 
 # Hard #
 
