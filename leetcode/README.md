@@ -21,15 +21,20 @@
 | Longest Palindromic Substring |
 | Zigzag Conversion|
 | String To Integer Atoi|
+| Integer to Roman|
+| Roman to Integer |
+
 
 |  List    |
 | ------------  | 
 | Add Two Numbers   |  
 
+
 |  Math    |
 | ------------  | 
 | Reverse Integer   |  
 | Palindrome Number   |  
+
 
 # Hard #
 
