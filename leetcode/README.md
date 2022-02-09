@@ -13,7 +13,13 @@
 | ------------  | 
 | Two Sum   |  
 
+|  List    |
+| ------------  | 
+| Merge Two Sorted Lists   |  
 
+|  String    |
+| ------------  | 
+| Roman to Integer |
 
 # Medium #
 |  String    |
@@ -22,8 +28,12 @@
 | Zigzag Conversion|
 | String To Integer Atoi|
 | Integer to Roman|
-| Roman to Integer |
 
+| Array|
+|------------|
+| Rotate Image |
+| Container With Most Water |
+| Three Sum |
 
 |  List    |
 | ------------  | 
@@ -41,3 +51,8 @@
 |  Array    |
 | ------------  | 
 | Find Median Sorted Arrays   |  
+
+
+|  List    |
+| ------------  | 
+| Merge k Sorted Lists  |  
