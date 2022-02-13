@@ -28,6 +28,7 @@
 | Zigzag Conversion|
 | String To Integer Atoi|
 | Integer to Roman|
+| Group Anagrams |
 
 | Array|
 |------------|
@@ -51,6 +52,7 @@
 |  Array    |
 | ------------  | 
 | Find Median Sorted Arrays   |  
+| First Missing Positive   |  
 
 
 |  List    |
