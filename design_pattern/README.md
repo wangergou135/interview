@@ -43,3 +43,28 @@ https://www.cnblogs.com/sunchaothu/p/9860062.html
 当存在多个产品系列，而客户端只使用一个系列的产品时，可以考虑使用抽象工厂模式。
 
 缺点：当增加一个新系列的产品时，不仅需要现实具体的产品类，还需要增加一个新的创建接口，扩展相对困难。
+
+https://www.cnblogs.com/chengjundu/p/8473564.html
+
+https://www.cnblogs.com/chengjundu/p/8473564.html
+
+# Decorator
+
+层层包装，增强功能。这就是装饰模式的要旨！装饰器模式就是基于对象组合的方式，可以很灵活的给对象添加所需要的功能。它把需要装饰的功能放在单独的类中，并让这个类包装它所要装饰的对象。
+动态的给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类模式更为灵活。
+
+参与者：
+
+Component
+——定义一个对象接口，可以给这些对象动态的添加职责。
+
+ConcreteComponent
+——定义一个对象，可以给这个对象添加一些职责。
+
+Decorator
+——维持一个指向Component对象的指针，并定义一个与Component接口一致的接口。
+
+ConcreteDecorator
+——向组件添加职责。
+
+https://www.cnblogs.com/wrbxdj/p/5259742.html
