@@ -29,12 +29,14 @@
 | String To Integer Atoi|
 | Integer to Roman|
 | Group Anagrams |
+| Multiply Strings |
 
 | Array|
 |------------|
 | Rotate Image |
 | Container With Most Water |
 | Three Sum |
+| Spiral Matrix |
 
 |  List    |
 | ------------  | 
@@ -45,7 +47,10 @@
 | ------------  | 
 | Reverse Integer   |  
 | Palindrome Number   |  
-
+| Pow(x, n)   |  
+| Letter Combinations of a Phone Number   |  
+| Permutations   |  
+| Jump Game II |
 
 # Hard #
 
