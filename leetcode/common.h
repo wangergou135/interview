@@ -8,6 +8,7 @@
 #include <queue>
 #include <climits>
 #include <cmath>
+#include <list>
 #include <string>
 
 using namespace std;
@@ -55,7 +56,14 @@ void print_listnode(ListNode* l)
     }
     cout << endl;
 }
-
+template <typename MapType>
+void print_map(MapType&& m) 
+{
+    for(auto item : m) {
+        cout << item.first << ", " << item.second << endl;
+    }
+    cout << endl;
+}
 // sorted lists
 ListNode ln11 {10};
 ListNode ln12 {8, &ln11};
