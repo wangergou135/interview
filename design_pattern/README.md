@@ -1,70 +1,63 @@
-# Design Patern Cpp
-
-#   Singleton
-
-
-#   Strategy
-策略模式
-策略模式定义了一系列算法和行为（也就是策略），他们可以在运行时相互替换。通常把这些算法封装为一个个独立的类，形成一个“算法族”，这一族算法有相同的接口。
-
-这里的算法和行为的含义都是指某件事的做法，也就是策略 Strategy 的含义，而不局限于计算机科学中的具体算法。本文中会混用算法、行为和策略。含义是一样的。
-
-例如新的税法颁布，计算个人所得税的新旧两种算法算一个算法族；试想如果将计算个人所得税的方法硬编码在用户类中，当新的税法颁布的时候，就要重写用户类的相关代码, 而如果使用策略模式，只需要遵循接口实现一个新的所的税算法类就行了，用户类只要确保成员变量设置为新的类的对象就行了。系统从而更有弹性和可维护性。
-
-应用案例
-这个例子来源于 《Head First 设计模式》：某公司有个鸭子仿真器这样一套系统，可以模拟各种鸭子。原先有 Mollard Duck（绿头鸭），是一种野鸭，可以飞，可以呱呱叫； 现在新加入一种模型鸭 (ModelDuck)，因为是模型，不能飞也不能叫; 面向对象的思想，很自然的我们将鸭子Duck 作为基类，MollardDuck 和 ModelDuck 继承Duck类，然后分别实现或者重写 fly() 和 quack() 方法。考虑到鸭子子类越来越多，大白鸭，小黄鸭，火箭鸭，丑小鸭... 这些鸭子的fly() 方法和quack()方法各异，每实现一个子类就要写一遍这些方法，而这些方法有些鸭种是相同的，如果反复重写这些方法就无法复用代码了; 而且对于丑小鸭来说，小的时候不会飞长大了是会飞的，丑小鸭变身——白天鹅。
-
-如何提高复用性和弹性呢？答案是策略模式。将 flyBehavior 和 quackBehavior作为类的成员，将 flyBehavior和quackBehavior也封装为基类，使用多态达到多种行为（策略、算法）的封装和复用。 
-
-设计思想
-用组合代替继承，注意到 组合的含义是 Has-A 而继承的含义是 Is-A。使用组合的话，将算法类作为用户类的成员，所以在运行时可以通过更改成员进行算法的替换。
-面向接口编程，而非面向实现编程。按照我的理解,为了系统的弹性和可维护性，将程序中容易变化的部分和不变的部分分离出来，接口Interface 定义了一种规范和约束，C++ 抽象基类(接口类)负责定义一组统一的不变的方法，子类必须实现这些方法，但是对于实现的细节没有约束。用鸭子的叫声这个行为为例子，定义了 QuackBehavior基类作为接口，要求子类必须实现void quack() 方法; 子类的实现可以是 呱呱叫， 咕咕叫，甚至是汪汪叫，也可以沉默（不叫）。
-
-https://www.cnblogs.com/sunchaothu/p/9860062.html
+https://refactoring.guru/design-patterns  
+https://en.wikipedia.org/wiki/Software_design_pattern
 
 
-#   Factory
-1、工厂模式
-在工厂模式中，我们在创建对象时不会对客户端暴露创建逻辑，并且是通过使用一个共同的接口来指向新创建的对象。工厂模式作为一种创建模式，一般在创建复杂对象时，考虑使用；在创建简单对象时，建议直接new完成一个实例对象的创建。
+# Creational patterns 
 
-1.1、简单工厂模式
-主要特点是需要在工厂类中做判断，从而创造相应的产品，当增加新产品时，需要修改工厂类。使用简单工厂模式，我们只需要知道具体的产品型号就可以创建一个产品。
+These patterns provide various object creation mechanisms, which increase flexibility and reuse of existing code.
 
-缺点：工厂类集中了所有产品类的创建逻辑，如果产品量较大，会使得工厂类变的非常臃肿。
+## Factory Method 
+        Factory Method is a creational design pattern that provides an interface for creating objects in a superclass, but allows subclasses to alter the type of objects that will be created.
+## Abstract Factory 
+        Abstract Factory is a creational design pattern that lets you produce families of related objects without specifying their concrete classes.
+## Builder 
+## Prototype 
+## Singleton 
+        Singleton is a creational design pattern that lets you ensure that a class has only one instance, while providing a global access point to this instance.
 
-1.2、工厂方法模式
-定义一个创建对象的接口，其子类去具体现实这个接口以完成具体的创建工作。如果需要增加新的产品类，只需要扩展一个相应的工厂类即可。
 
-缺点：产品类数据较多时，需要实现大量的工厂类，这无疑增加了代码量。
 
-1.3、抽象工厂模式
-抽象工厂模式提供创建一系列相关或相互依赖对象的接口，而无需指定它们具体的类。
+# Structural patterns 
 
-当存在多个产品系列，而客户端只使用一个系列的产品时，可以考虑使用抽象工厂模式。
+These patterns explain how to assemble objects and classes into larger structures while keeping these structures flexible and efficient.
 
-缺点：当增加一个新系列的产品时，不仅需要现实具体的产品类，还需要增加一个新的创建接口，扩展相对困难。
+## Adapter
+        Adapter is a structural design pattern that allows objects with incompatible interfaces to collaborate.
+## Bridge
+## Composite
+## Decorator
+        Decorator is a structural design pattern that lets you attach new behaviors to objects by placing these objects inside special wrapper objects that contain the behaviors.
+## Facade
+## Flyweight
+## Proxy
 
-https://www.cnblogs.com/chengjundu/p/8473564.html
 
-https://www.cnblogs.com/chengjundu/p/8473564.html
+# Behavioral patterns 
 
-# Decorator
+These patterns are concerned with algorithms and the assignment of responsibilities between objects.
 
-层层包装，增强功能。这就是装饰模式的要旨！装饰器模式就是基于对象组合的方式，可以很灵活的给对象添加所需要的功能。它把需要装饰的功能放在单独的类中，并让这个类包装它所要装饰的对象。
-动态的给一个对象添加一些额外的职责。就增加功能来说，Decorator模式相比生成子类模式更为灵活。
+## Chain of Responsibility
+## Command
+        Command is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation lets you pass requests as a method arguments, delay or queue a request’s execution, and support undoable operations. 
+## Iterator
+        Iterator is a behavioral design pattern that lets you traverse elements of a collection without exposing its underlying representation (list, stack, tree, etc.).
+## Mediator
+## Memento
+## Observer
+        Observer is a behavioral design pattern that lets you define a subscription mechanism to notify multiple objects about any events that happen to the object they’re observing.
 
-参与者：
+## State
+## Strategy
+        Strategy is a behavioral design pattern that lets you define a family of algorithms, put each of them into a separate class, and make their objects interchangeable.
+## Template Method
+## Visitor
 
-Component
-——定义一个对象接口，可以给这些对象动态的添加职责。
+# Concurrency
 
-ConcreteComponent
-——定义一个对象，可以给这个对象添加一些职责。
+# Architectural patterns 
 
-Decorator
-——维持一个指向Component对象的指针，并定义一个与Component接口一致的接口。
+## Publish–subscribe
+        This pattern involves the publisher and the subscriber relying on a message broker that relays messages from the publisher to the subscribers. The host (publisher) publishes messages (events) to a channel that subscribers can then sign up to.
 
-ConcreteDecorator
-——向组件添加职责。
 
-https://www.cnblogs.com/wrbxdj/p/5259742.html
+# Other
